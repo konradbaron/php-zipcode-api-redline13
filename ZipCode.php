@@ -19,11 +19,11 @@ class ZipCode {
 	private $state;
 	
 	
-    public function __construct($api_key)
-    {
-        $this->api_key = $api_key;
+    	public function __construct($api_key)
+    	{
+        	$this->api_key = $api_key;
 		$this->zipcode_base_url .= $this->api_key.'/';
-    }
+    	}
 	
 	private function check_zipcode($zipcode) {
 		if(!preg_match('/^\d{5}$/', $zipcode))  throw new Exception('Zip code is not valid.');
