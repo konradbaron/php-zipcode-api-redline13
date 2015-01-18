@@ -8,7 +8,7 @@ The API currently returns your data in three formats; JSON, CSV and XML. This cl
 ##Example Usage
 
 ###Instantiate the class
-$zipCode = new ZipCode(YOUR_API_KEY);
+    $zipCode = new ZipCode(YOUR_API_KEY);
 
 ###Distance between two zip codes
     $zipCode->get_zipcode_distance(ZIP_CODE, ZIP_CODE2);
