@@ -68,7 +68,7 @@ class ZipCode {
 		$this->check_units($units);
 		$this->check_format($format);
 		
-		$this->send_url = $this->zipcode_base_url.'distance.'.$format.'/'.$zipcode.'/'.$zipcode2.'/'.$units.'';
+		$this->send_url = $this->zipcode_base_url.'distance.'.$format.'/'.$zipcode.'/'.$zipcode2.'/'.$units;
 		return $this->curl($this->send_url);
 	}
 	
@@ -84,7 +84,7 @@ class ZipCode {
 		$this->check_units($units);
 		$this->check_format($format);
 		
-		$this->send_url = $this->zipcode_base_url.'radius.'.$format.'/'.$zipcode.'/'.$distance.'/'.$units.'';
+		$this->send_url = $this->zipcode_base_url.'radius.'.$format.'/'.$zipcode.'/'.$distance.'/'.$units;
 		return $this->curl($this->send_url);
 	}
 	
@@ -100,7 +100,7 @@ class ZipCode {
 		$this->check_units($units);
 		$this->check_format($format);
 		
-		$this->send_url = $this->zipcode_base_url.'info.'.$format.'/'.$zipcode.'/'.$units.'';
+		$this->send_url = $this->zipcode_base_url.'info.'.$format.'/'.$zipcode.'/'.$units;
 		return $this->curl($this->send_url);
 	}
 	
@@ -115,7 +115,7 @@ class ZipCode {
 		$this->check_format($format);
 		$this->check_state($state);
 		
-		$this->send_url = $this->zipcode_base_url.'city-zips.'.$format.'/'.$city.'/'.$state.'';
+		$this->send_url = $this->zipcode_base_url.'city-zips.'.$format.'/'.$city.'/'.$state;
 		return $this->curl($this->send_url);
 	}
 	
@@ -131,7 +131,7 @@ class ZipCode {
 			$error = curl_error($ch);
 			curl_close($ch);
 			
-			throw new Exception("Failed retrieving  '" . $this->send_url . "' because of ' " . $error . "'.");
+			throw new Exception("Failed retrieving  '" . $this->send_url . "' because of '" . $error . "'.");
 		}
 		return $result;
 	}
