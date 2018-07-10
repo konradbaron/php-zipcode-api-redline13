@@ -1,0 +1,20 @@
+{
+  "name": "konradbaron/redline13",
+  "description": "PHP package for the ZipCodeAPI by RedLine13",
+  "keywords": ["zip code", "api", "redline13"],
+  "type": "package",
+  "license": "MIT",
+  "authors": [{
+	"name": "Konrad Baron",
+	"email": "konradbaron@gmail.com"
+  }],
+  "autoload": {
+	"psr-4": {
+	  "KonradBaron\\RedLine13\\": "src/"
+	}
+  },
+  "require": {
+	"guzzlehttp/guzzle": "~6.2"
+  },
+  "version": "1.0.0"
+}
