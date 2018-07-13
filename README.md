@@ -8,7 +8,7 @@ The API currently returns your data in three formats; JSON, CSV and XML. This cl
 ## Requirements
 This library requires the use of Composer.
 ```
-composer require konradbaron/fantasydata:dev-master
+composer require konradbaron/redline13:dev-master
 ```
 
 ##Example Usage
