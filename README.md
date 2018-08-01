@@ -11,40 +11,40 @@ This library requires the use of Composer.
 composer require konradbaron/redline13:dev-master
 ```
 
-##Example Usage
+## Example Usage
 
-###Instantiate the class
+### Instantiate the class
 ```php
   use KonradBaron\RedLine13\RedLine13;
   $zipCode = new RedLine13(YOUR_API_KEY);
 ```
     
-###Distance between two zip codes
+### Distance between two zip codes
 ```php
   echo $zipCode->getZipcodeDistance(ZIP_CODE, ZIP_CODE2);
 ```    
     
-###Find all zip codes within a given radius of a zip code
+### Find all zip codes within a given radius of a zip code
 ```php
   echo $zipCode->getZipcodesByRadius(ZIP_CODE,RADIUS_DISTANCE);
 ```     
     
-###Find city, state, latitude, longitude, and time zone information for a zip code
+### Find city, state, latitude, longitude, and time zone information for a zip code
 ```php
   echo $zipCode->getLocationInfoByZipcode(ZIP_CODE);
 ```     
     
-###Find out possible zip codes for a city
+### Find out possible zip codes for a city
 ```php
   echo $zipCode->getZipcodesByLocation(CITY, STATE);
 ```     
 
-###Find out possible zip codes for a state
+### Find out possible zip codes for a state
 ```php
   echo $zipCode->getZipcodesByState(STATE);
 ```
 
-###Find distance between one zip code and multiple other zip codes
+### Find distance between one zip code and multiple other zip codes
 ```php
   echo $zipCode->getMultipleZipcodesDistance(ZIP_CODE,OTHER_ZIP_CODES);
 ```
