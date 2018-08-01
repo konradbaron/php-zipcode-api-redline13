@@ -38,3 +38,13 @@ composer require konradbaron/redline13:dev-master
 ```php
   echo $zipCode->getZipcodesByLocation(CITY, STATE);
 ```     
+
+###Find out possible zip codes for a state
+```php
+  echo $zipCode->getZipcodesByState(STATE);
+```
+
+###Find distance between one zip code and multiple other zip codes
+```php
+  echo $zipCode->getMultipleZipcodesDistance(ZIP_CODE,OTHER_ZIP_CODES);
+```

@@ -22,6 +22,15 @@ class RedLine13
 		return true;
 	}
 
+	private function checkZipcodes($zipcodes)
+	{
+		$zips = explode(',', $zipcodes);
+		foreach($zips as $zip) {
+			$this->checkZipcode($zip);
+		}
+		return true;
+	}
+
 	private function checkState($state)
 	{
 		if(strlen($state) > 2) throw new \Exception('Must use abbreviated form of state');
@@ -122,6 +131,38 @@ class RedLine13
 		$this->checkState($state);
 
 		$sendUrl = $this->zipcodeBaseUrl.'city-zips.'.$format.'/'.$city.'/'.$state;
+		return $this->request($sendUrl);
+	}
+
+	/**
+	 * URL format http://www.zipcodeapi.com/rest/<api_key>/state-zips.<format>/<state>
+	 * Returns possible zip codes for a state.
+	 */
+	public function getZipcodesByState($state,$format = 'json')
+	{
+		$format = $this->prepareString($format);
+		$state = $this->prepareString($state);
+		$this->checkFormat($format);
+		$this->checkState($state);
+
+		$sendUrl = $this->zipcodeBaseUrl.'state-zips.'.$format.'/'.$state;
+		return $this->request($sendUrl);
+	}
+
+	/**
+	 * URL format http://www.zipcodeapi.com/rest/<api_key>/multi-distance.<format>/<zip_code>/<other_zip_codes/units>
+	 * Returns distance between one zip code and multiple other zip codes.
+	 */
+	public function getMultipleZipcodesDistance($zipcode, $zipcodes, $units = 'mile', $format = 'json')
+	{
+		$format = $this->prepareString($format);
+		$units = $this->prepareString($units);
+		$this->checkZipcode($zipcode);
+		$this->checkZipcodes($zipcodes);
+		$this->checkFormat($format);
+		$this->checkUnits($units);
+
+		$sendUrl = $this->zipcodeBaseUrl.'multi-distance.'.$format.'/'.$zipcode.'/'.$zipcodes.'/'.$units;
 		return $this->request($sendUrl);
 	}
 }
